@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: mm2-scramble-api
+    env: node
+    plan: free
+    buildCommand: 'npm install && curl -L https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt -o words_alpha.txt'
+    startCommand: 'node server.js'
+    envVars:
+      - key: NODE_ENV
+        value: production
